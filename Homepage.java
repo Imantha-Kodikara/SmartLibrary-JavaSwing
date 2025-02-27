@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 class Homepage extends JFrame{
 	private JButton btnAddBook;
 	private JButton btnUpdate;
@@ -10,7 +11,7 @@ class Homepage extends JFrame{
 	
 	private JPanel btnPanel;
 	public Homepage(){
-		setSize(700, 500);
+		setSize(1200, 700);
 		setTitle("Home Page");
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -20,32 +21,32 @@ class Homepage extends JFrame{
 		add(image);
 		
 		btnAddBook = new JButton("Add Book");
-		btnAddBook.setFont(new Font("",1,16));
+		btnAddBook.setFont(new Font("",1,30));
 		btnAddBook.setForeground(Color.WHITE);
 		btnAddBook.setBackground(new Color(165, 34, 135));
 		
 		btnUpdate = new JButton("Update Book");
-		btnUpdate.setFont(new Font("",1,16));
+		btnUpdate.setFont(new Font("",1,30));
 		btnUpdate.setForeground(Color.WHITE);
 		btnUpdate.setBackground(new Color(165, 34, 135));
 		
 		btnDelete = new JButton("Delete Book");
-		btnDelete.setFont(new Font("",1,16));
+		btnDelete.setFont(new Font("",1,30));
 		btnDelete.setForeground(Color.WHITE);
 		btnDelete.setBackground(new Color(165, 34, 135));
 		
 		btnView = new JButton("View Book");
-		btnView.setFont(new Font("",1,16));
+		btnView.setFont(new Font("",1,30));
 		btnView.setForeground(Color.WHITE);
 		btnView.setBackground(new Color(165, 34, 135));
 		
 		btnSearch = new JButton("Search Book");
-		btnSearch.setFont(new Font("",1,16));
+		btnSearch.setFont(new Font("",1,30));
 		btnSearch.setForeground(Color.WHITE);
 		btnSearch.setBackground(new Color(165, 34, 135));
 		
 		btnExit = new JButton("EXIT");
-		btnExit.setFont(new Font("",1,16));
+		btnExit.setFont(new Font("",1,30));
 		btnExit.setForeground(Color.WHITE);
 		btnExit.setBackground(new Color(165, 34, 135));
 		
@@ -60,6 +61,14 @@ class Homepage extends JFrame{
 		btnPanel.add(btnExit);
 		
 		add(btnPanel);
+		
+		//Set action to the btnAddBook Button
+		
+		btnAddBook.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				new AddBook().setVisible(true);//Creating new AddBook object
+			}
+		});
 		
 		
 	}
