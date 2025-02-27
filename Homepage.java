@@ -70,6 +70,23 @@ class Homepage extends JFrame{
 			}
 		});
 		
+		//Set action to the btnUpdate Button
+		
+		btnUpdate.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				new UpdateBook().setVisible(true);//Creating new Update object
+			}
+		});
+		
+		//Set action to the btnDelete Button
+		
+		btnDelete.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				new DeleteBook().setVisible(true);//Creating new Update object
+			}
+		});
+		
+		
 		
 	}
 }
